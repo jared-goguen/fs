@@ -1,0 +1,40 @@
+{
+  "input": {
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "Root directory to search in"
+      },
+      "pattern": {
+        "type": "string",
+        "description": "Pattern to search for (glob-like: *.ext, name*, *substring*)"
+      },
+      "maxDepth": {
+        "type": "number",
+        "description": "Maximum directory depth to search (default: 5)"
+      }
+    },
+    "required": ["path", "pattern"],
+    "additionalProperties": false
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "content": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

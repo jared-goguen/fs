@@ -1,0 +1,40 @@
+{
+  "input": {
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "Path to the file to edit"
+      },
+      "oldString": {
+        "type": "string",
+        "description": "Exact string to find and replace"
+      },
+      "newString": {
+        "type": "string",
+        "description": "String to replace it with"
+      }
+    },
+    "required": ["path", "oldString", "newString"],
+    "additionalProperties": false
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "content": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
